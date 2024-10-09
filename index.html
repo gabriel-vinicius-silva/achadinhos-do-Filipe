@@ -3,90 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Achadinhos do Filipe</title>
+    <title>Loja de Produtos</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Achadinhos da <span class="filiope">Filipe</span></h1>
-        <p class="slogan">Encontre aqui os melhores achadinhos da Shoppe por preços incríveis!</p>
+        <h1>Loja de Produtos</h1>
+        <p class="slogan">Os melhores produtos a um clique de você!</p>
     </header>
-
-    <section id="produtos">
-        <h2>Confira Meus Produtos</h2>
-
+    
+    <nav id="categorias">
+        <div class="categorias-container">
+            <button class="tab-button" onclick="scrollToSection('categoria1')">Categoria 1</button>
+            <button class="tab-button" onclick="scrollToSection('categoria2')">Categoria 2</button>
+            <button class="tab-button" onclick="scrollToSection('categoria3')">Categoria 3</button>
+        </div>
+    </nav>
+    
+    <section id="categoria1">
+        <h2>Categoria 1</h2>
         <div class="container-produtos">
-            <!-- Produto 1 -->
             <div class="produto">
                 <img src="produto1.jpg" alt="Produto 1">
                 <h3>Produto 1</h3>
-                <p>Item essencial para o seu dia a dia. Aproveite!</p>
-                <span class="preco">R$ 29,90</span>
-                <button class="add-carrinho" data-produto="Produto 1">Pedir pelo WhatsApp</button>
+                <p>Descrição do Produto 1</p>
+                <p class="preco">R$ 10,00</p>
+                <button onclick="location.href='https://wa.me/84999596721?text=Quero%20comprar%20o%20Produto%201'">Pedir pelo WhatsApp</button>
             </div>
-
-            <!-- Produto 2 -->
             <div class="produto">
                 <img src="produto2.jpg" alt="Produto 2">
                 <h3>Produto 2</h3>
-                <p>Produto exclusivo, ideal para você que ama novidades.</p>
-                <span class="preco">R$ 49,90</span>
-                <button class="add-carrinho" data-produto="Produto 2">Pedir pelo WhatsApp</button>
+                <p>Descrição do Produto 2</p>
+                <p class="preco">R$ 20,00</p>
+                <button onclick="location.href='https://wa.me/84999596721?text=Quero%20comprar%20o%20Produto%202'">Pedir pelo WhatsApp</button>
             </div>
-
-            <!-- Produto 3 -->
+            <!-- Adicione mais produtos aqui -->
+        </div>
+    </section>
+    
+    <section id="categoria2">
+        <h2>Categoria 2</h2>
+        <div class="container-produtos">
             <div class="produto">
                 <img src="produto3.jpg" alt="Produto 3">
                 <h3>Produto 3</h3>
-                <p>Promoção imperdível! Melhor preço do mercado.</p>
-                <span class="preco">R$ 19,90</span>
-                <button class="add-carrinho" data-produto="Produto 3">Pedir pelo WhatsApp</button>
+                <p>Descrição do Produto 3</p>
+                <p class="preco">R$ 30,00</p>
+                <button onclick="location.href='https://wa.me/84999596721?text=Quero%20comprar%20o%20Produto%203'">Pedir pelo WhatsApp</button>
             </div>
-
-            <!-- Produto 4 -->
             <div class="produto">
                 <img src="produto4.jpg" alt="Produto 4">
                 <h3>Produto 4</h3>
-                <p>Item especial para presentear quem você ama.</p>
-                <span class="preco">R$ 39,90</span>
-                <button class="add-carrinho" data-produto="Produto 4">Pedir pelo WhatsApp</button>
+                <p>Descrição do Produto 4</p>
+                <p class="preco">R$ 40,00</p>
+                <button onclick="location.href='https://wa.me/84999596721?text=Quero%20comprar%20o%20Produto%204'">Pedir pelo WhatsApp</button>
             </div>
-
-            <!-- Produto 5 -->
-            <div class="produto">
-                <img src="produto5.jpg" alt="Produto 5">
-                <h3>Produto 5</h3>
-                <p>Perfeito para deixar seu ambiente mais elegante.</p>
-                <span class="preco">R$ 99,90</span>
-                <button class="add-carrinho" data-produto="Produto 5">Pedir pelo WhatsApp</button>
-            </div>
-
-            <!-- Produto 6 -->
-            <div class="produto">
-                <img src="produto6.jpg" alt="Produto 6">
-                <h3>Produto 6</h3>
-                <p>Item indispensável para sua coleção. Adquira já!</p>
-                <span class="preco">R$ 79,90</span>
-                <button class="add-carrinho" data-produto="Produto 6">Pedir pelo WhatsApp</button>
-            </div>
+            <!-- Adicione mais produtos aqui -->
         </div>
     </section>
 
-    <!-- Rodapé -->
-    <footer>
-        <div class="footer-container">
-            <div class="social-icons">
-                <a href="https://api.whatsapp.com/send?phone=5584999596721" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="social-icon">
-                </a>
-                <a href="https://www.instagram.com/seu_perfil" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="social-icon">
-                </a>
+    <section id="categoria3">
+        <h2>Categoria 3</h2>
+        <div class="container-produtos">
+            <div class="produto">
+                <img src="produto5.jpg" alt="Produto 5">
+                <h3>Produto 5</h3>
+                <p>Descrição do Produto 5</p>
+                <p class="preco">R$ 50,00</p>
+                <button onclick="location.href='https://wa.me/84999596721?text=Quero%20comprar%20o%20Produto%205'">Pedir pelo WhatsApp</button>
             </div>
-            <p>&copy; 2024 Achadinhos da Filiope - Todos os direitos reservados.</p>
+            <div class="produto">
+                <img src="produto6.jpg" alt="Produto 6">
+                <h3>Produto 6</h3>
+                <p>Descrição do Produto 6</p>
+                <p class="preco">R$ 60,00</p>
+                <button onclick="location.href='https://wa.me/84999596721?text=Quero%20comprar%20o%20Produto%206'">Pedir pelo WhatsApp</button>
+            </div>
+            <!-- Adicione mais produtos aqui -->
         </div>
-    </footer>
+    </section>
 
-    <script src="script.js"></script>
+    <footer>
+        <p>Entre em contato conosco!</p>
+        <div class="social-icons">
+            <a href="https://api.whatsapp.com/send?phone=84999596721" target="_blank">
+                <img src="whatsapp-icon.png" alt="WhatsApp">
+            </a>
+            <a href="https://www.instagram.com/seu_perfil" target="_blank">
+                <img src="instagram-icon.png" alt="Instagram">
+            </a>
+        </div>
+        <p>&copy; 2024 Loja de Produtos by Gabriel Vinícius Da Silva. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>

@@ -1,15 +1,21 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const botoesCarrinho = document.querySelectorAll('.add-carrinho');
+// Scroll suave para as categorias
+document.querySelectorAll('.tab-button').forEach(button => {
+    button.addEventListener('click', () => {
+        const targetSection = document.querySelector(button.getAttribute('data-target'));
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
 
-    botoesCarrinho.forEach(botao => {
-        botao.addEventListener('click', function () {
-            const produto = botao.getAttribute('data-produto');
-            const numeroWhatsApp = '5584999596721'; // Número de WhatsApp com o DDD correto
-            const mensagem = `Olá, gostaria de solicitar o ${produto} que vi no site Achadinhos da Filiope.`;
-
-            // Codifica a mensagem e redireciona para o WhatsApp
-            const urlWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensagem)}`;
-            window.open(urlWhatsApp, '_blank');
-        });
+// Enviar mensagem para o WhatsApp com o nome do produto
+const botoes = document.querySelectorAll('.add-carrinho');
+botoes.forEach(botao => {
+    botao.addEventListener('click', () => {
+        const produto = botao.getAttribute('data-produto');
+        const telefone = "84999596721"; // Número do WhatsApp
+        const mensagem = `Olá, gostaria de saber mais sobre o produto: ${produto}.`;
+        const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
+        window.open(url, '_blank');
     });
 });
