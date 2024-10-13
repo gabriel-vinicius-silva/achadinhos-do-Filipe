@@ -1,21 +1,21 @@
-// Scroll suave para as categorias
-document.querySelectorAll('.tab-button').forEach(button => {
-    button.addEventListener('click', () => {
-        const targetSection = document.querySelector(button.getAttribute('data-target'));
-        if (targetSection) {
-            targetSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
-});
+let carrinho = [];
 
-// Enviar mensagem para o WhatsApp com o nome do produto
-const botoes = document.querySelectorAll('.add-carrinho');
-botoes.forEach(botao => {
-    botao.addEventListener('click', () => {
-        const produto = botao.getAttribute('data-produto');
-        const telefone = "84999596721"; // Número do WhatsApp
-        const mensagem = `Olá, gostaria de saber mais sobre o produto: ${produto}.`;
-        const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
-        window.open(url, '_blank');
-    });
-});
+// Adicionar produto ao carrinho
+function adicionarAoCarrinho(produto) {
+    carrinho.push(produto);
+    alert(produto + ' foi adicionado ao carrinho.');
+}
+
+// Enviar mensagem para o WhatsApp
+function enviarMensagem(event) {
+    event.preventDefault();
+    
+    const nome = document.getElementById('nome').value;
+    const telefone = document.getElementById('telefone').value;
+    const produtosCarrinho = carrinho.join(', ');
+    
+    let mensagem = `Olá, meu nome é ${nome}. Tenho interesse nos seguintes produtos: ${produtosCarrinho}. Meu telefone é ${telefone}. Gostaria de saber mais informações.`;
+    
+    const url = `https://api.whatsapp.com/send?phone=55${telefone}&text=${encodeURIComponent(mensagem)}`;
+    window.open(url, '_blank');
+}

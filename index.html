@@ -1,100 +1,59 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja de Produtos</title>
+    <title>Loja do Filipe</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Loja de Produtos</h1>
-        <p class="slogan">Os melhores produtos a um clique de você!</p>
+        <h1>Loja Online do Filipe</h1>
     </header>
-    
-    <nav id="categorias">
-        <div class="categorias-container">
-            <button class="tab-button" onclick="scrollToSection('categoria1')">Categoria 1</button>
-            <button class="tab-button" onclick="scrollToSection('categoria2')">Categoria 2</button>
-            <button class="tab-button" onclick="scrollToSection('categoria3')">Categoria 3</button>
-        </div>
-    </nav>
-    
-    <section id="categoria1">
-        <h2>Categoria 1</h2>
-        <div class="container-produtos">
-            <div class="produto">
-                <img src="produto1.jpg" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <p>Descrição do Produto 1</p>
-                <p class="preco">R$ 10,00</p>
-                <button onclick="location.href='https://wa.me/84999596721?text=Quero%20comprar%20o%20Produto%201'">Pedir pelo WhatsApp</button>
-            </div>
-            <div class="produto">
-                <img src="produto2.jpg" alt="Produto 2">
-                <h3>Produto 2</h3>
-                <p>Descrição do Produto 2</p>
-                <p class="preco">R$ 20,00</p>
-                <button onclick="location.href='https://wa.me/84999596721?text=Quero%20comprar%20o%20Produto%202'">Pedir pelo WhatsApp</button>
-            </div>
-            <!-- Adicione mais produtos aqui -->
-        </div>
-    </section>
-    
-    <section id="categoria2">
-        <h2>Categoria 2</h2>
-        <div class="container-produtos">
-            <div class="produto">
-                <img src="produto3.jpg" alt="Produto 3">
-                <h3>Produto 3</h3>
-                <p>Descrição do Produto 3</p>
-                <p class="preco">R$ 30,00</p>
-                <button onclick="location.href='https://wa.me/84999596721?text=Quero%20comprar%20o%20Produto%203'">Pedir pelo WhatsApp</button>
-            </div>
-            <div class="produto">
-                <img src="produto4.jpg" alt="Produto 4">
-                <h3>Produto 4</h3>
-                <p>Descrição do Produto 4</p>
-                <p class="preco">R$ 40,00</p>
-                <button onclick="location.href='https://wa.me/84999596721?text=Quero%20comprar%20o%20Produto%204'">Pedir pelo WhatsApp</button>
-            </div>
-            <!-- Adicione mais produtos aqui -->
-        </div>
+
+    <section id="produtos">
+        <ul>
+            <li>
+                <img src="IMG/capa-de-cama.PNG" alt="Capa Protetora de Cama" class="imagem-produto">
+                <span>Capa Protetora de Cama</span>
+                <button onclick="adicionarAoCarrinho('Capa Protetora de Cama')">Adicionar ao carrinho</button>
+            </li>
+            <li>
+                <img src="IMG/jogo-de-lencol.PNG" alt="Jogo de Lençol" class="imagem-produto">
+                <span>Jogo de Lençol</span>
+                <button onclick="adicionarAoCarrinho('Jogo de Lençol')">Adicionar ao carrinho</button>
+            </li>
+            <li>
+                <img src="IMG/caiza.PNG" alt="Caixa de Som" class="imagem-produto">
+                <span>Caixa de Som</span>
+                <button onclick="adicionarAoCarrinho('Caixa de Som')">Adicionar ao carrinho</button>
+            </li>
+            <li>
+                <img src="IMG/camera.PNG" alt="Câmera de Segurança à Prova d'Água" class="imagem-produto">
+                <span>Câmera de Segurança à Prova d'Água</span>
+                <button onclick="adicionarAoCarrinho('Câmera de Segurança à Prova d\'Água')">Adicionar ao carrinho</button>
+            </li>
+            <li>
+                <img src="IMG/piscina.PNG" alt="Piscina Inflável" class="imagem-produto">
+                <span>Piscina Inflável</span>
+                <button onclick="adicionarAoCarrinho('Piscina Inflável')">Adicionar ao carrinho</button>
+            </li>
+        </ul>
     </section>
 
-    <section id="categoria3">
-        <h2>Categoria 3</h2>
-        <div class="container-produtos">
-            <div class="produto">
-                <img src="produto5.jpg" alt="Produto 5">
-                <h3>Produto 5</h3>
-                <p>Descrição do Produto 5</p>
-                <p class="preco">R$ 50,00</p>
-                <button onclick="location.href='https://wa.me/84999596721?text=Quero%20comprar%20o%20Produto%205'">Pedir pelo WhatsApp</button>
-            </div>
-            <div class="produto">
-                <img src="produto6.jpg" alt="Produto 6">
-                <h3>Produto 6</h3>
-                <p>Descrição do Produto 6</p>
-                <p class="preco">R$ 60,00</p>
-                <button onclick="location.href='https://wa.me/84999596721?text=Quero%20comprar%20o%20Produto%206'">Pedir pelo WhatsApp</button>
-            </div>
-            <!-- Adicione mais produtos aqui -->
-        </div>
+    <section id="contato">
+        <h2>Entre em Contato</h2>
+        <form onsubmit="enviarMensagem(event)">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" required>
+
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="telefone" required>
+
+            <button type="submit">Enviar para WhatsApp</button>
+        </form>
     </section>
 
-    <footer>
-        <p>Entre em contato conosco!</p>
-        <div class="social-icons">
-            <a href="https://api.whatsapp.com/send?phone=84999596721" target="_blank">
-                <img src="whatsapp-icon.png" alt="WhatsApp">
-            </a>
-            <a href="https://www.instagram.com/seu_perfil" target="_blank">
-                <img src="instagram-icon.png" alt="Instagram">
-            </a>
-        </div>
-        <p>&copy; 2024 Loja de Produtos by Gabriel Vinícius Da Silva. Todos os direitos reservados.</p>
-    </footer>
+    <script src="script.js"></script>
 </body>
 </html>

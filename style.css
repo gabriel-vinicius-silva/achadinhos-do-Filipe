@@ -1,195 +1,95 @@
-/* Estilo geral */
+/* Estilo para o corpo */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #f4f4f4;
     color: #333;
+    margin: 0;
+    padding: 0;
 }
 
 /* Cabeçalho */
 header {
-    background-color: #ff6600;
-    padding: 20px;
-    text-align: center;
-    color: white;
-    animation: fadeIn 1s ease-in;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-header .slogan {
-    margin-top: 10px;
-    font-size: 1.2em;
-    font-style: italic;
-}
-
-/* Menu de Categorias */
-#categorias {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.categorias-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.tab-button {
-    background-color: #ff6600;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 10px;
-    cursor: pointer;
-    font-size: 1em;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.tab-button:hover {
-    background-color: #e64a00;
-    transform: scale(1.05);
-}
-
-/* Seção de Produtos */
-section {
-    padding: 30px 0;
-}
-
-section h2 {
-    text-align: center;
-    color: #ff6600;
-    font-size: 2em;
-    margin-bottom: 20px;
-    animation: slideIn 0.5s ease;
-}
-
-/* Produtos */
-.container-produtos {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    animation: fadeIn 1s ease-in;
-}
-
-.produto {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin: 15px;
-    padding: 15px;
-    width: 250px;
-    text-align: center;
-    transition: transform 0.3s ease;
-    opacity: 0;
-    animation: fadeInUp 0.5s forwards;
-}
-
-.produto img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.produto h3 {
-    font-size: 1.2em;
-    color: #333;
-}
-
-.produto p {
-    font-size: 0.9em;
-    color: #666;
-}
-
-.produto .preco {
-    font-size: 1.1em;
-    color: #ff6600;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.produto button {
-    background-color: #ff6600;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.produto button:hover {
-    background-color: #e64a00;
-    transform: scale(1.05);
-}
-
-.produto:hover {
-    transform: translateY(-5px);
-}
-
-/* Rodapé */
-footer {
     background-color: #333;
-    color: white;
+    color: #fff;
     padding: 20px;
     text-align: center;
-    position: relative;
-    margin-top: 20px;
 }
 
-footer .social-icons {
+h1 {
+    margin: 0;
+}
+
+/* Seção de produtos */
+#produtos {
+    margin: 20px auto;
+    padding: 10px;
+    max-width: 600px;
+}
+
+#produtos ul {
+    list-style: none;
+    padding: 0;
+}
+
+#produtos li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
     margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-footer .social-icons a {
-    margin: 0 10px;
+/* Imagem dos produtos */
+.imagem-produto {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 10px;
 }
 
-footer .social-icons img {
-    width: 30px;
-    margin: 0 10px;
-    transition: transform 0.3s ease;
+/* Estilo para os botões */
+#produtos button, form button {
+    background-color: #28a745; /* Cor verde para chamar a atenção */
+    color: #fff; /* Cor do texto */
+    border: none; /* Remover bordas */
+    padding: 12px 20px; /* Ajustar o espaçamento interno */
+    border-radius: 25px; /* Arredondar os cantos */
+    font-size: 16px; /* Aumentar o tamanho da fonte */
+    cursor: pointer; /* Alterar o cursor para "pointer" ao passar o mouse */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adicionar sombra sutil */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Adicionar transições suaves */
 }
 
-footer .social-icons img:hover {
-    transform: scale(1.2);
+/* Efeito ao passar o mouse nos botões */
+#produtos button:hover, form button:hover {
+    background-color: #218838; /* Cor mais escura ao passar o mouse */
+    transform: translateY(-2px); /* Elevar o botão ligeiramente */
 }
 
-/* Animações */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+/* Efeito ao pressionar o botão */
+#produtos button:active, form button:active {
+    background-color: #1e7e34; /* Cor ainda mais escura ao clicar */
+    transform: translateY(0); /* Voltar à posição original */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduzir a sombra ao clicar */
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Estilo para o formulário de contato */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 20px auto;
 }
 
-@keyframes slideIn {
-    from {
-        transform: translateY(-20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+form label {
+    margin-top: 10px;
+}
+
+form input {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
